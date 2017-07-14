@@ -1,0 +1,147 @@
+body{
+	font-size: 400 15px/1.8;
+	padding-right: 0 !important;
+	padding-left: 0;
+}
+
+.navbar{
+	width: 100%;
+	background-color: #122a3a;
+	color: white;
+	margin-left: 0;
+    margin-right: 0;
+}
+
+.navbar-nav li.active a {
+    color: #fff !important;
+    background-color:#29292c !important;
+}
+
+.navbar li a, .navbar .navbar-brand { 
+    color: #d5d5d5 !important;
+}
+
+/* On hover, the links will turn white */
+.navbar-nav li a:hover {
+    color: #fff !important;
+    font-weight: bold;
+}	
+	
+.item-menu-principal{
+	color: white;
+}
+
+.infor-empresa-menu{
+	text-align: right;
+}
+
+.container, .container-fluid {
+ padding-right: 15px;
+ padding-left: 15px;
+ background-color: #f9f9f9;
+}
+
+.footer1{
+	background-color: #be5b20;
+	text-align: center;
+	padding-top: 20px;
+}
+
+.feature-box{
+	text-align: center;
+}
+
+.feature-box > div{
+	text-align: left;
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+.feature-box > .section-heading, .feature-box > .section-description{
+	text-align: center;
+	margin-left: 15px;
+	margin-right: 15px;
+	padding-left: 15px;
+	padding-right: 15px;	
+}
+.btn:hover{
+	background-color: #8a5b20;
+	border-color: #8a5b20;
+}
+
+.btn{
+	background-color: #be5b20;
+	border-color: #be5b20;
+	float: right;
+	margin-right: -15px;
+	margin-bottom: 15px;
+}
+
+.features-big{
+	margin-right: 15px;
+	margin-left: 15px;
+}
+.marketing{
+	margin: 15px;
+}
+
+table{
+	padding: 15px;
+}
+
+.modal-dialog{
+	margin-top: 50px;
+	color: white;
+}
+
+#googleMap {
+    width: 100%; /* Span the entire width of the screen */
+    height: 280px; /* Set the height to 400 pixels */
+}
+
+textarea{
+	height: 130px;
+}
+
+.tipo2 {
+	text-align: center;
+}
+
+.div-contato > div{
+	margin: 15px;
+}
+
+#div-contato{
+	background-color: #810000;
+	color: #e8dcd2;
+}
+
+#div-contato input {
+	background-color: #e8dcd2;
+}
+#div-contato textarea {
+	background-color: #e8dcd2;
+}
+
+.mapa span {
+	color: #e8dcd2;
+}
+
+.modal-open[style] {
+	padding-right: 0px !important; 
+} 
+
+.carousel-caption h3 {
+    color: #fff !important;
+}
+
+@media (max-width: 600px) {
+	.footer{
+		padding-top: 0px;
+	}
+    .carousel-caption {
+        display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
+    }
+}
