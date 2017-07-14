@@ -1,0 +1,67 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title>{{empresa.nome}}</title>
+  
+  <!-- Bootstrap CSS -->
+  <link href="{% static 'runze/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'runze/bootstrap/css/style.css' %}" rel="stylesheet">
+</head>
+<body>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+  <h3>Enviando mensagem para Runze...</h3>
+  <p><em>Obrigado por aguardar</em></p>
+  </div><!-- /.modal-dialog -->
+</div>
+<div class="container-fluid ">
+  <header class="row">
+    <nav class="navbar navbar-toggleable navbar-inverse fixed-top">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="#"><img class="img-responsive" src='{{MEDIA_URL}}{{empresa.logo.url}}'/></a>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          {% for menu in menus %}
+            <li class="nav-item">
+              <a class="nav-link menu-item" href="#{{menu.nome}}" id="{{menu.nome}}">{{menu.titulo}}<span class="sr-only">(current)</span></a>
+            </li>
+          {% endfor %}
+        </ul>
+        <div class="my-2 my-lg-0 infor-empresa-menu">
+        <table>
+          <tr>
+            <td>
+              <img src="media/sprite.png"/>
+            </td>
+            <td>
+              <span>{{empresa.telefone}}</span><br \>
+              <span>{{empresa.email}}</span>
+            </td>
+          </tr>
+        </table>
+        </div>
+      </div>
+    </nav>   
+  </header>
+  <div class="row" id="conteudo">
+    <div role="main">
+      {% block content %}
+      {% endblock %}
+    </div>
+  </div>
+</div>
+  <!-- jQuery (necessario para os plugins Javascript do Bootstrap) -->
+  <script src="{% static 'runze/bootstrap/js/jquery.min.js' %}"></script>
+  <script src="{% static 'runze/bootstrap/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'runze/bootstrap/js/script.js' %}"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDt3M_tqiRmegIuvrBN8RkJ5AnrZd5xYM8&callback=myMap"></script>
+</body>
+</html>
