@@ -3,8 +3,19 @@
 <h1 class="section-heading">Contato</h1>
 <!-- /.modal -->
 <div class="row features-big">
-	<div  class="col-sm-6">
-		<div id="div-resposta"><span>{{resposta}}</span></div>
+	<div  id="div-form-contato" class="col-sm-6">
+	{% if respostas %}
+		<div class="alert alert-success alert-dismissable">
+ 			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  			<strong>Sucesso!</strong> {{respostas}}
+		</div>
+	{% endif %}
+	{% if respostae %}
+		<div class="alert alert-danger alert-dismissable">
+ 			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  			<strong>Problemas!</strong> {{respostae}}
+		</div>
+	{% endif %}
 		<form class="form-horizontal form-contato" action="{% url 'runze:contato' %}"method="POST">{% csrf_token %}
 			{% for field in form %}
 			<div class="form-group row">
@@ -33,7 +44,7 @@
 <div class="footer1">
     <p><b>@ Runze Tecnologia - 2017 - Todos os direitos reservados</b></p>
 </div>	
-{% if resposta %}
+{% if respostas or respostae %}
 <script src="{% static 'runze/bootstrap/js/form-contato.js' %}"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDt3M_tqiRmegIuvrBN8RkJ5AnrZd5xYM8&callback=myMap"></script>
 {% endif %}

@@ -1,13 +1,17 @@
 $('.form-contato').on('submit', function(e){
 	e.preventDefault();
 	var valores = $(this).serialize();
-	var loading = $('.loading');
 	$('#myModal').modal('show');
 	$.post(this.action, valores, function(data){
 		$('#myModal').hide();	
 		$('.modal-backdrop').hide();
 		$('body').removeClass('modal-open');	
-		$('#div-contato').html(data);
+		$('#div-form-contato').html(data);
+	}).fail(function(){
+		$('#myModal').hide();	
+		$('.modal-backdrop').hide();
+		$('body').removeClass('modal-open');	
+		$('#div-form-contato').html(data);
 	});	
 });
 

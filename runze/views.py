@@ -22,6 +22,7 @@ def home(request):
 def contato(request):
 	if request.method == "POST":
 		form = ContatoForm(request.POST)
+		empresa = Empresa.objects.get(pk=1)
 		if form.is_valid():
 			contato = form.save(commit=False)
 			contato.save()
@@ -29,5 +30,5 @@ def contato(request):
 			texto = 'Nome: '+contato.nome+'\n\r'+'Telefone: '+contato.telefone+'\n\r'+'E-mail: '+contato.email+'\n\r'+'Data: '+str(contato.data)+'\n\r\n\r'+'Assunto: '+contato.assunto+'\n\r\n\r'+'Mensagem: '+contato.texto
 			time.sleep(5)
 			#send_mail('Site: '+contato.nome+' - '+contato.assunto, texto, 'runzegit@gmail.com', ['runzegit@gmail.com'], fail_silently=False, )
-			return render(request, 'runze/form-contato.html', {'form': ContatoForm(), 'resposta': 'Mensagem enviada com sucesso! Obrigado!'})
-		return render(request, 'runze/form-contato.html', {'form': ContatoForm(), 'resposta': 'Ocorrou algum problema ao enviar mensagem, tente novamente mais tarde. Obrigado'})
+			return render(request, 'runze/form-contato.html', {'form': ContatoForm(), 'respostas': 'Mensagem enviada com sucesso! Obrigado!', 'empresa': empresa})
+		return render(request, 'runze/form-contato.html', {'form': ContatoForm(), 'respostae': 'Ocorrou algum problema ao enviar mensagem, tente novamente mais tarde. Obrigado', 'empresa': empresa})
