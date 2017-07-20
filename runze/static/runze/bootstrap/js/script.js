@@ -14,10 +14,12 @@ $('.form-contato').on('submit', function(e){
 		$('.modal-backdrop').hide();
 		$('body').removeClass('modal-open');	
 		$('#div-contato').html(data);
+		//$('#div-resposta').find('span').html('Mensagem enviada com sucesso! Obrigado!');
 	}).fail(function(){
 		$('#myModal').hide();	
 		$('.modal-backdrop').hide();
 		$('body').removeClass('modal-open');	
+		//$('#div-resposta').find('span').html('Ocorrou algum problema ao enviar mensagem, tente novamente mais tarde. Obrigado');
 	});	
 });
 

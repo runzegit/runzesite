@@ -28,6 +28,6 @@ def contato(request):
 			empresa = Empresa.objects.get(pk=1)
 			texto = 'Nome: '+contato.nome+'\n\r'+'Telefone: '+contato.telefone+'\n\r'+'E-mail: '+contato.email+'\n\r'+'Data: '+str(contato.data)+'\n\r\n\r'+'Assunto: '+contato.assunto+'\n\r\n\r'+'Mensagem: '+contato.texto
 			time.sleep(5)
-			send_mail('Site: '+contato.assunto, texto, 'runzegit@gmail.com', ['runzegit@gmail.com'], fail_silently=False, )
+			send_mail('Site: '+contato.nome+' - '+contato.assunto, texto, 'runzegit@gmail.com', ['runzegit@gmail.com'], fail_silently=False, )
 			return render(request, 'runze/form-contato.html', {'form': ContatoForm(), 'resposta': 'Mensagem enviada com sucesso! Obrigado!'})
 	return render(request, 'runze/form-contato.html', {'form': ContatoForm(), 'resposta': 'Ocorrou algum problema ao enviar mensagem, tente novamente mais tarde. Obrigado'})
